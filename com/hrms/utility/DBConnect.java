@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class DBConnect {
 
-	public static Connection start() {
+	public static Connection connection() {
 		
-		Connection con = null;
+		Connection conn = null;
 		
 		
 		try {
@@ -18,14 +18,14 @@ public class DBConnect {
 		}
 		
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrms","root","root");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrms","root","root");
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
 
 		
-		return con;
+		return conn;
 		
 		
 	}
