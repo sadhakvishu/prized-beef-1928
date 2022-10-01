@@ -53,17 +53,19 @@ insert into employee(empName,empRole,empSalary,empMail,empPassword,empDeptId,emp
 ==============================================================================================================
 
 
-create table leaveEmployee
+create table leaves
 (
 leaveId int primary key auto_increment,
 leaveDuration int not null,
 leaveEmpName varchar(36) not null,
+leaveReason varchar(36),
+leavePermission varchar(36),
 leaveEmpId int,
 foreign key(leaveEmpId) references employee(empId)
 ON UPDATE CASCADE ON DELETE CASCADE 
 );
 
 
-insert into leaveEmployee(leaveDuration,leaveEmpName,leaveEmpId) values(3,'Naman',1);
+insert into leaves(leaveDuration,leaveEmpName,leaveEmpId) values(3,'Naman',1);
 
 ==============================================================================================================

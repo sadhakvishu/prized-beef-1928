@@ -8,19 +8,22 @@ public class Leave {
 	private String leaveEmpName;
 	private int leaveEmpId;
 	private int leaveDuration;
-	private String approveDeny;
+	private String leavePermission;
+	private String leaveReason;
 	
 	public Leave() {
 		super();
 	}
 
-	public Leave(int leaveId, String leaveEmpName, int leaveEmpId, int leaveDuration, String approveDeny) {
+	public Leave(int leaveId, String leaveEmpName, int leaveEmpId, int leaveDuration, String leavePermission,
+			String leaveReason) {
 		super();
 		this.leaveId = leaveId;
 		this.leaveEmpName = leaveEmpName;
 		this.leaveEmpId = leaveEmpId;
 		this.leaveDuration = leaveDuration;
-		this.approveDeny = approveDeny;
+		this.leavePermission = leavePermission;
+		this.leaveReason = leaveReason;
 	}
 
 	public int getLeaveId() {
@@ -55,38 +58,24 @@ public class Leave {
 		this.leaveDuration = leaveDuration;
 	}
 
-	public String getApproveDeny() {
-		return approveDeny;
+	public String getLeavePermission() {
+		return leavePermission;
 	}
 
-	public void setApproveDeny(String approveDeny) {
-		this.approveDeny = approveDeny;
+	public void setLeavePermission(String leavePermission) {
+		this.leavePermission = leavePermission;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(approveDeny, leaveDuration, leaveEmpId, leaveEmpName, leaveId);
+	public String getLeaveReason() {
+		return leaveReason;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Leave other = (Leave) obj;
-		return Objects.equals(approveDeny, other.approveDeny) && leaveDuration == other.leaveDuration
-				&& leaveEmpId == other.leaveEmpId && Objects.equals(leaveEmpName, other.leaveEmpName)
-				&& leaveId == other.leaveId;
+	public void setLeaveReason(String leaveReason) {
+		this.leaveReason = leaveReason;
 	}
 
-	@Override
-	public String toString() {
-		return "Leave [leaveId=" + leaveId + ", leaveEmpName=" + leaveEmpName + ", leaveEmpId=" + leaveEmpId
-				+ ", leaveDuration=" + leaveDuration + ", approveDeny=" + approveDeny + "]";
-	}
 	
+
+
 	
 }
