@@ -5,22 +5,25 @@ import java.util.Objects;
 public class Leave {
 
 	private int leaveId;
-	private String empName;
-	private int empId;
+	private String leaveEmpName;
+	private int leaveEmpId;
 	private int leaveDuration;
-	private String approveDeny;
+	private String leavePermission;
+	private String leaveReason;
 	
 	public Leave() {
 		super();
 	}
 
-	public Leave(int leaveId, String empName, int empId, int leaveDuration, String approveDeny) {
+	public Leave(int leaveId, String leaveEmpName, int leaveEmpId, int leaveDuration, String leavePermission,
+			String leaveReason) {
 		super();
 		this.leaveId = leaveId;
-		this.empName = empName;
-		this.empId = empId;
+		this.leaveEmpName = leaveEmpName;
+		this.leaveEmpId = leaveEmpId;
 		this.leaveDuration = leaveDuration;
-		this.approveDeny = approveDeny;
+		this.leavePermission = leavePermission;
+		this.leaveReason = leaveReason;
 	}
 
 	public int getLeaveId() {
@@ -31,20 +34,20 @@ public class Leave {
 		this.leaveId = leaveId;
 	}
 
-	public String getEmpName() {
-		return empName;
+	public String getLeaveEmpName() {
+		return leaveEmpName;
 	}
 
-	public void setEmpName(String empName) {
-		this.empName = empName;
+	public void setLeaveEmpName(String leaveEmpName) {
+		this.leaveEmpName = leaveEmpName;
 	}
 
-	public int getEmpId() {
-		return empId;
+	public int getLeaveEmpId() {
+		return leaveEmpId;
 	}
 
-	public void setEmpId(int empId) {
-		this.empId = empId;
+	public void setLeaveEmpId(int leaveEmpId) {
+		this.leaveEmpId = leaveEmpId;
 	}
 
 	public int getLeaveDuration() {
@@ -55,41 +58,24 @@ public class Leave {
 		this.leaveDuration = leaveDuration;
 	}
 
-	public String getApproveDeny() {
-		return approveDeny;
+	public String getLeavePermission() {
+		return leavePermission;
 	}
 
-	public void setApproveDeny(String approveDeny) {
-		this.approveDeny = approveDeny;
+	public void setLeavePermission(String leavePermission) {
+		this.leavePermission = leavePermission;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(approveDeny, empId, empName, leaveDuration, leaveId);
+	public String getLeaveReason() {
+		return leaveReason;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Leave other = (Leave) obj;
-		return Objects.equals(approveDeny, other.approveDeny) && empId == other.empId
-				&& Objects.equals(empName, other.empName) && leaveDuration == other.leaveDuration
-				&& leaveId == other.leaveId;
+	public void setLeaveReason(String leaveReason) {
+		this.leaveReason = leaveReason;
 	}
 
-	@Override
-	public String toString() {
-		return "Leave [leaveId=" + leaveId + ", empName=" + empName + ", empId=" + empId + ", leaveDuration="
-				+ leaveDuration + ", approveDeny=" + approveDeny + "]";
-	}
 	
-	
-	
-		
+
+
 	
 }

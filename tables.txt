@@ -1,0 +1,71 @@
+create database hrms;
+use hrms;
+
+==============================================================================================================
+
+create table department
+(
+deptId int primary key auto_increment,
+deptName varchar(36) not null,
+deptLocation varchar(36) not null
+);
+
+insert into department(deptName,deptLocation) values('Sales','Pune');
+insert into department(deptName,deptLocation) values('It','Chennai');
+
+==============================================================================================================
+
+
+create table admin
+(
+admId int primary key auto_increment,
+admName varchar(36) not null,
+admMail varchar(36) unique not null,
+admPassword varchar(36) not null
+);
+
+insert into admin(admName,admMail,admPassword) values('a1','a1@g.c','123');
+insert into admin(admName,admMail,admPassword) values('a2','a2@g.c','123');
+
+==============================================================================================================
+
+
+create table employee
+(
+empId int primary key auto_increment,
+empName varchar(36) not null,
+empRole varchar(36) not null,
+empSalary varchar(36) not null,
+empMail varchar(36) unique not null,
+empPassword varchar(36) not null,
+empDeptId int,
+empLeavesAvailable int,
+empJoiningDate date,
+foreign key(empDeptId) references department(deptId)
+ON UPDATE CASCADE ON DELETE CASCADE 
+);
+
+insert into employee(empName,empRole,empSalary,empMail,empPassword,empDeptId,empLeavesAvailable,empJoiningDate) values('Naman','FSD','Rs. 86000','naman@g.c','123',1,24,'2022-10-01');
+insert into employee(empName,empRole,empSalary,empMail,empPassword,empDeptId,empLeavesAvailable,empJoiningDate) values('Ishika','Java Developer','Rs. 96000','ishika@g.c','123',2,24,'2022-10-01');
+
+
+
+==============================================================================================================
+
+
+create table leaves
+(
+leaveId int primary key auto_increment,
+leaveDuration int not null,
+leaveEmpName varchar(36) not null,
+leaveReason varchar(36),
+leavePermission varchar(36),
+leaveEmpId int,
+foreign key(leaveEmpId) references employee(empId)
+ON UPDATE CASCADE ON DELETE CASCADE 
+);
+
+
+insert into leaves(leaveDuration,leaveEmpName,leaveEmpId) values(3,'Naman',1);
+
+==============================================================================================================
