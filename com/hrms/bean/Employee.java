@@ -9,7 +9,7 @@ public class Employee {
 	private int empDeptId;
 	private String empName;
 	private String empRole;
-	private int empSalary;
+	private String empSalary;
 	private String empEmail;
 	private String empPassword;
 	private int empLeavesAvaialable;
@@ -19,7 +19,7 @@ public class Employee {
 		super();
 	}
 
-	public Employee(int empId, int empDeptId, String empName, String empRole, int empSalary, String empEmail,
+	public Employee(int empId, int empDeptId, String empName, String empRole, String empSalary, String empEmail,
 			String empPassword, int empLeavesAvaialable, Date empJoiningDate) {
 		super();
 		this.empId = empId;
@@ -31,6 +31,20 @@ public class Employee {
 		this.empPassword = empPassword;
 		this.empLeavesAvaialable = empLeavesAvaialable;
 		this.empJoiningDate = empJoiningDate;
+	}
+	
+	public Employee(int empId, int empDeptId, String empName, String empRole, String empSalary, String empEmail,
+			String empPassword, int empLeavesAvaialable) {
+		super();
+		this.empId = empId;
+		this.empDeptId = empDeptId;
+		this.empName = empName;
+		this.empRole = empRole;
+		this.empSalary = empSalary;
+		this.empEmail = empEmail;
+		this.empPassword = empPassword;
+		this.empLeavesAvaialable = empLeavesAvaialable;
+		
 	}
 
 	public int getEmpId() {
@@ -65,11 +79,11 @@ public class Employee {
 		this.empRole = empRole;
 	}
 
-	public int getEmpSalary() {
+	public String getEmpSalary() {
 		return empSalary;
 	}
 
-	public void setEmpSalary(int empSalary) {
+	public void setEmpSalary(String empSalary) {
 		this.empSalary = empSalary;
 	}
 

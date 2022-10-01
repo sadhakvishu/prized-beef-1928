@@ -9,6 +9,6 @@ public interface DepartmentDao {
 
 	public String deptAdd(String name, String location) throws DeptException;
 	public List<Department> deptAllList() throws DeptException;
-	public Department deptUpdate(String name) throws DeptException;
+	public String deptUpdate(String name,String location) throws DeptException;
 	
 }
