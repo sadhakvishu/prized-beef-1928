@@ -6,9 +6,10 @@ import com.hrms.dao.DepartmentDao;
 import com.hrms.dao.DepartmentDaoImpl;
 import com.hrms.exceptions.DeptException;
 
-public class AddDept {
+public class UpdateDept {
 
 	public static void main(String[] args) {
+		
 		
 		DepartmentDao d = new DepartmentDaoImpl();
 		Scanner sc = new Scanner( System.in);
@@ -21,12 +22,13 @@ public class AddDept {
 		
 		String res;
 		try {
-			res = d.deptAdd(deptName, deptLocation);
+			res = d.deptUpdate(deptName, deptLocation);
 		} catch (DeptException e) {
 			res = e.getMessage();
 		}
 		
 		System.out.println(res);
+		
 
 	}
 

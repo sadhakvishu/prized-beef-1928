@@ -46,6 +46,18 @@ public class Employee {
 		this.empLeavesAvaialable = empLeavesAvaialable;
 		
 	}
+	
+	public Employee( int empDeptId, String empName, String empRole, String empSalary, String empEmail,
+			String empPassword) {
+		super();
+		this.empDeptId = empDeptId;
+		this.empName = empName;
+		this.empRole = empRole;
+		this.empSalary = empSalary;
+		this.empEmail = empEmail;
+		this.empPassword = empPassword;
+		
+	}
 
 	public int getEmpId() {
 		return empId;
